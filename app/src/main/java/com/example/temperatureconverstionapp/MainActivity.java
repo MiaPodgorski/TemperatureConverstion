@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         buttonC = findViewById(R.id.buttonC);
         inputF = findViewById(R.id.inputF);
         buttonF = findViewById(R.id.buttonF);
+        background = findViewById(R.id.background);
 
         buttonC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (x<=32) background.setBackgroundColor(0xFFA9E5F8);
                 else if (32<x && x<=60) background.setBackgroundColor(0xFFFAB248);
-                else if (60<x && x<=100) background.setBackgroundColor(0xF5D32F24);
+                else background.setBackgroundColor(0xF5D32F24);
             }
         });
 
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
                 double x = Double.parseDouble(s);
                 x=(x-32)*.5556;
                 outputC.setText(x +" degrees celsius");
+
+                if (x<=0) background.setBackgroundColor(0xFFA9E5F8);
+                else if (0<x && x<=20) background.setBackgroundColor(0xFFFAB248);
+                else  background.setBackgroundColor(0xF5D32F24);
             }
         });
 
